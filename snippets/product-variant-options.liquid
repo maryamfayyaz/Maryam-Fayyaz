@@ -60,14 +60,13 @@
 
   {% assign escaped_value = value | escape %}
 
-  {%- if picker_type == 'swatch' -%}
+  {%- if picker_type == 'dropdown' -%}
     {%- capture help_text -%}
       <span class="visually-hidden">{{ escaped_value }}</span>
       {{ label_unavailable }}
     {%- endcapture -%}
 
-    {%
-      render 'swatch-input',
+    {% render 'swatch-input',
       id: input_id,
       name: input_name,
       value: escaped_value,
@@ -79,6 +78,32 @@
       help_text: help_text,
       additional_props: input_dataset
     %}
+  {%- elsif picker_type == 'button' and option.name == 'Color' -%}
+    <div class="color-option">
+      <input
+        type="radio"
+        id="{{ input_id }}"
+        name="{{ input_name | escape }}"
+        value="{{ escaped_value }}"
+        form="{{ product_form_id }}"
+        {% if value.selected %}
+          checked
+        {% endif %}
+        {% if option_disabled %}
+          class="disabled"
+        {% endif %}
+        {{ input_dataset }}
+      >
+
+      <label for="{{ input_id }}" class="color-label color-{{ value | handle }}">
+        <span class="color-strip"></span>
+        <span class="color-text">
+          {{ value }}
+          {{ label_unavailable }}
+        </span>
+      </label>
+    </div>
+
   {%- elsif picker_type == 'button' -%}
     <input
       type="radio"

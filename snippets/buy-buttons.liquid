@@ -82,13 +82,21 @@
               disabled
             {% endif %}
           >
-            <span>
+            <span class="custom-add-to-cart">
               {%- if product.selected_or_first_available_variant == null -%}
                 {{ 'products.product.unavailable' | t }}
               {%- elsif product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}
+                <img
+                  style="display: none;"
+                  src="{{ 'icon-arrow.svg' | asset_url }}"
+                  alt="{{ product.title | escape }}"
+                  loading="lazy"
+                  height="auto"
+                  width="33.699481964111385px"
+                >
               {%- endif -%}
             </span>
             {%- render 'loading-spinner' -%}

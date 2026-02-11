@@ -1317,6 +1317,23 @@
         "name": "Image banner"
       }
     },
+    "custom-banner": {
+      "name": "Custom Banner",
+      "blocks": {
+        "top_bar": {
+          "name": "Top Bar"
+        },
+        "middle_section": {
+          "name": "Middle Section"
+        },
+        "bottom_section": {
+          "name": "Bottom Section"
+        }
+      },
+      "presets": {
+        "name": "Custom Banner"
+      }
+    },
     "image-with-text": {
       "name": "Image with text",
       "settings": {
