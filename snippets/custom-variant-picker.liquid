@@ -18,8 +18,6 @@
       {%- liquid
         assign picker_type = option.name
 
-        assign a = product.options_with_values | json
-
         if option.name == 'Size'
           assign picker_type = 'swatch_dropdown'
         elsif option.name == 'Color'
@@ -42,7 +40,7 @@
         </div>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
-          <label class="form__label" for="options[{{ option.name | escape }}]">
+          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
             {{ option.name }}
           </label>
           <div class="custom-select select">

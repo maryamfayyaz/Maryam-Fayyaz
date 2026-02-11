@@ -9,8 +9,6 @@
     data-zoom-on-hover
   {% endif %}
 >
-  <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
   <div class="">
     <div class="quick-view-button">
@@ -51,7 +49,7 @@
               <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                 {%- render 'price',
                   product: product,
-                  use_variant: false,
+                  use_variant: true,
                   show_badges: false,
                   price_class: 'price--large'
                 -%}
@@ -79,7 +77,7 @@
               product: product,
               product_form_id: product_form_id,
               section_id: section.id,
-              show_pickup_availability: true
+              show_pickup_availability: false
             -%}
           </div>
       {%- endcase -%}
