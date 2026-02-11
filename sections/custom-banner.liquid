@@ -245,7 +245,7 @@
     margin: 0;
   }
   .top_bar_wrapper p {
-    /* font-family: Jost; */
+    font-family: Jost;
     margin: 0;
     font-weight: 400;
     font-size: 16px;
@@ -264,10 +264,11 @@
     align-items: center;
     margin: 0 0 0 67px;
     position: relative;
+    overflow: hidden;
   }
 
   .middle-section-bottom .left-side h1 {
-    /* font-family: Jost; */
+    font-family: Jost;
     margin-bottom: 20px;
     font-weight: 500;
     font-size: 70px;
@@ -310,7 +311,7 @@
       margin-bottom: 219.04px;
     }
     .middle-section-bottom .left-side h1 {
-      /* font-family: Jost; */
+      font-family: Jost;
       font-weight: 500;
       font-style: Medium;
       font-size: 164.78px;
@@ -319,7 +320,7 @@
       vertical-align: middle;
     }
     .middle-section-bottom .left-side p {
-      /* font-family: Jost; */
+      font-family: Jost;
       font-weight: 400;
       font-style: Regular;
       font-size: 47.08px;
@@ -362,7 +363,7 @@
   }
 
   .bottom-section-wrapper p {
-    /* font-family: Jost; */
+    font-family: Jost;
     font-weight: 400;
     font-size: 16px;
     width: 100%;
@@ -374,18 +375,48 @@
   }
 
   @media (max-width: 768px) {
+    .bottom-section-wrapper p {
+      font-family: Jost;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 13.42px;
+      letter-spacing: 0px;
+      text-align: center;
+      vertical-align: middle;
+    }
     .middle-section-bottom {
       flex-direction: column;
       margin: 0;
       position: relative;
     }
     .middle-section-bottom .left-side {
-      width: 30%;
+      width: 100%;
+      padding: 17px;
       text-align: center;
+      align-items: center;
+    }
+    .middle-section-bottom .left-side p {
+      font-family: Jost;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      letter-spacing: 0px;
+      text-align: center;
+    }
+    .middle-section-bottom .left-side h1 {
+      font-family: Jost;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 30px;
+      line-height: 100%;
+      letter-spacing: 0px;
+      text-align: center;
+      vertical-align: middle;
     }
     .middle-section-bottom .left-side .custom-banner__button-wrapper {
       position: absolute;
       bottom: 39px;
+      z-index: 1;
     }
     .middle-section-bottom .custom-banner__button-wrapper {
       justify-content: center;
@@ -395,6 +426,16 @@
     }
     .banner-image-1 {
       display: none;
+    }
+    .middle-section-bottom .right-side {
+      position: relative;
+      left: 0;
+      top: 100%;
+    }
+    .middle-section-bottom .right-side img {
+      object-fit: none;
+      object-position: center top;
+      height: 264px;
     }
   }
 
